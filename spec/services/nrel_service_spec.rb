@@ -1,4 +1,4 @@
-require 'rails-helper'
+require 'rails_helper'
 
 describe "NREL Service API" do
   it "API should return correct data" do
