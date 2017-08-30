@@ -1,7 +1,9 @@
-<h1>Search Results</h1>
+<h1>Search Results For <%= @zipcode %></h1>
 <% @stations.each do |station| %>
-  <%= station.name %>
-  <%= station.address %>
-  <%= station.fuel_types %>
-  <%= station.access_times %>
+  <ul>
+    <li>Name: <%= station.name %></li>
+    <li>Address: <%= station.address %></li>
+    <li>Fuel Types: <%= station.fuel_types %></li>
+    <li>Access Times: <%= station.access_times %></li>
+  </ul>
 <% end %>
