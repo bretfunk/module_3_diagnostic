@@ -16,11 +16,11 @@ class NrelService
     end
 
     def stations
-      get_url("/nrel/alt-fuel-stations/v1.json?location=#{zipcode}limit=10")
+      get_url("/nrel/alt-fuel-stations/v1.json?limit=10location=#{zipcode}")[:fuel_stations]
     end
 
     def get_url(url)
-      @conn.get(url)
+      parse(@conn.get(url))
     end
 
     def parse(response)

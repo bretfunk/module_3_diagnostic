@@ -1,0 +1,7 @@
+<h1>Search Results</h1>
+<% @stations.each do |station| %>
+  <%= station.name %>
+  <%= station.address %>
+  <%= station.fuel_types %>
+  <%= station.access_times %>
+<% end %>
