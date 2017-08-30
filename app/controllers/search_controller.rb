@@ -6,7 +6,7 @@ class SearchController < ApplicationController
       faraday.adapter Faraday.default_adapter
     end
     @response = @conn.get("/nrel/alt-fuel-stations/v1.json?limit=10")
-    @parsed = JSON.parse(@response.body, symbolize_names: true)
+    @parsed = JSON.parse(@response.body, symbolize_names: true)[:fuel_stations]
 
     @stations = @parsed.map do |raw_station|
       Station.new(raw_station)
