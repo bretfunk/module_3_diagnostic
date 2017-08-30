@@ -10,7 +10,7 @@ class Station
   end
 
   def self.for_user(zipcode)
-    NrelService.stations(state).map do |raw_station|
+    NrelService.stations(zipcode).map do |raw_station|
       Station.new(raw_station)
     end
   end

@@ -15,8 +15,8 @@ class NrelService
       NrelService.new(zipcode).stations
     end
 
-    def stations(zipcode)
-      get_url("/nrel/alt-fuel-stations/v1.json?limit=10")
+    def stations
+      get_url("/nrel/alt-fuel-stations/v1.json?location=#{zipcode}limit=10")
     end
 
     def get_url(url)
